@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "409083328389",
+    "project_id": "flutter-wallpaper-application",
+    "storage_bucket": "flutter-wallpaper-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409083328389:android:ab69d399b9569a91d8f6ec",
+        "android_client_info": {
+          "package_name": "com.example.flutter_wallpaper_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409083328389-4npd1kgcee265o4vo25stihgnhnhdsd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdyuGCnvM6SRQkhnuLTwC05qTyaV-LYlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409083328389-4npd1kgcee265o4vo25stihgnhnhdsd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
