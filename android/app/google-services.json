@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "409083328389",
-    "project_id": "flutter-wallpaper-application",
-    "storage_bucket": "flutter-wallpaper-application.appspot.com"
+    "project_number": "631253467455",
+    "project_id": "flutter-wallpaper-applic-dacff",
+    "storage_bucket": "flutter-wallpaper-applic-dacff.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:409083328389:android:ab69d399b9569a91d8f6ec",
+        "mobilesdk_app_id": "1:631253467455:android:2c5e552753538e8456138a",
         "android_client_info": {
           "package_name": "com.example.flutter_wallpaper_application"
         }
       },
       "oauth_client": [
         {
-          "client_id": "409083328389-4npd1kgcee265o4vo25stihgnhnhdsd1.apps.googleusercontent.com",
+          "client_id": "631253467455-a1g66t88dsv5r2ibq77rkhj0qd4ofh73.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAdyuGCnvM6SRQkhnuLTwC05qTyaV-LYlw"
+          "current_key": "AIzaSyCFEZA71TOa5O4RUmfGWaQ5DM80TN3tMkQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "409083328389-4npd1kgcee265o4vo25stihgnhnhdsd1.apps.googleusercontent.com",
+              "client_id": "631253467455-a1g66t88dsv5r2ibq77rkhj0qd4ofh73.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
