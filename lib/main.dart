@@ -35,8 +35,9 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: AppString.AppName,
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-            scaffoldBackgroundColor: AppColors.bg,
+            primarySwatch: Colors.deepPurple,
+            // scaffoldBackgroundColor: AppColors.bg,
+            scaffoldBackgroundColor: Colors.black,
             floatingActionButtonTheme: FloatingActionButtonThemeData(
               backgroundColor: Colors.white,
               foregroundColor: Colors.black,

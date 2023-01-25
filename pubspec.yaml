@@ -46,6 +46,7 @@ dependencies:
   share_plus: any
   flutter_screenutil: any
   get: any
+  carousel_slider: any
   
 
 dev_dependencies:
