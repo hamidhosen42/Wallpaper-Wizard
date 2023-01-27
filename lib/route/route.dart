@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter_wallpaper_application/CategoryPage/nature_category.dart';
+import 'package:flutter_wallpaper_application/CategoryPage/image_category.dart';
 import 'package:flutter_wallpaper_application/Page/nav_controller.dart';
 import 'package:flutter_wallpaper_application/Page/nav_home.dart.dart';
 import 'package:flutter_wallpaper_application/screen/splash_screen.dart';

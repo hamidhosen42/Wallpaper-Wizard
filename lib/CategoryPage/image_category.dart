@@ -1,10 +1,12 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, must_be_immutable, unused_local_variable
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, must_be_immutable, unused_local_variable, unused_field
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wallpaper_application/DetailsPage/details_screen.dart';
+
+import '../const/app_colors.dart';
 
 class NatureScreen extends StatelessWidget {
   String name;
@@ -17,12 +19,12 @@ class NatureScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   title: Text("Nature Wellpaper"),
-      //   centerTitle: true,
-      //   backgroundColor: AppColors.bg,
-      // ),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(name),
+        centerTitle: true,
+        backgroundColor: AppColors.bg,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 15,

@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_wallpaper_application/const/app_colors.dart';
 import 'package:flutter_wallpaper_application/const/app_strings.dart';
 import 'package:flutter_wallpaper_application/route/route.dart';
 import 'package:flutter_wallpaper_application/screen/splash_screen.dart';
@@ -35,8 +36,7 @@ class _MyAppState extends State<MyApp> {
           title: AppString.AppName,
           theme: ThemeData(
             primarySwatch: Colors.deepPurple,
-            // scaffoldBackgroundColor: AppColors.bg,
-            scaffoldBackgroundColor: Colors.black,
+            scaffoldBackgroundColor: AppColors.bg,
             floatingActionButtonTheme: FloatingActionButtonThemeData(
               backgroundColor: Colors.white,
               foregroundColor: Colors.black,
