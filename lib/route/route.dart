@@ -15,5 +15,5 @@ List<GetPage> getPages = [
   GetPage(name: splash, page: () => SplashScreen()),
   GetPage(name: homeScreen, page: () => HomeScreen()),
   GetPage(name: bottomNavController, page: () => BottomNavController()),
-  GetPage(name: bottomNavController, page: () => NatureScreen()),
+  // GetPage(name: bottomNavController, page: () => NatureScreen()),
 ];
