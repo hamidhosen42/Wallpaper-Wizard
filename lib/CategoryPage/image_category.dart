@@ -21,16 +21,16 @@ class NatureScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(name),
+        title: Text(name,style: TextStyle(fontSize: 25.sp)),
         centerTitle: true,
         backgroundColor: AppColors.bg,
       ),
       body: Padding(
         padding: const EdgeInsets.only(
-          left: 15,
-          right: 15,
-          top: 20,
-          bottom: 10,
+          left: 10,
+          right: 10,
+          top: 5,
+          bottom: 5,
         ),
         child: StreamBuilder(
           stream: FirebaseFirestore.instance
@@ -68,10 +68,10 @@ class NatureScreen extends StatelessWidget {
       itemCount: data['img'].length,
       itemBuilder: (context, index) {
         return Material(
-          borderRadius: BorderRadius.circular(10.h),
+          borderRadius: BorderRadius.circular(5.h),
           child: Ink(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.h),
+              borderRadius: BorderRadius.circular(5.h),
               image: DecorationImage(
                 image: NetworkImage(
                  data['img'][index],
@@ -86,6 +86,7 @@ class NatureScreen extends StatelessWidget {
                   CupertinoPageRoute(
                     builder: (_) => DetailsScreen(
                       data['img'][index],
+                      name
                     ),
                   )),
             ),

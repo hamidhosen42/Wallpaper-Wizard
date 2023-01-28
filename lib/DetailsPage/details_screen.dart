@@ -1,8 +1,10 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors, unused_local_variable, prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_downloader/image_downloader.dart';
@@ -11,9 +13,16 @@ import 'package:simple_speed_dial/simple_speed_dial.dart';
 
 import '../const/app_colors.dart';
 
-class DetailsScreen extends StatelessWidget {
-  String imgUrl;
-  DetailsScreen(this.imgUrl);
+class DetailsScreen extends StatefulWidget {
+  String imgUrl,name;
+  DetailsScreen(this.imgUrl, this.name);
+
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  final firestore = FirebaseFirestore.instance.collection('favorite');
 
   setWallpaperHomeScreen(url) async {
     try {
@@ -79,57 +88,74 @@ class DetailsScreen extends StatelessWidget {
           fontWeight: FontWeight.w600,
         ),
         speedDialChildren: [
-          //Set Homescreen
           SpeedDialChild(
             child: const Icon(
               Icons.wallpaper,
               size: 18,
             ),
             label: 'Set Homescreen',
-            onPressed: () => setWallpaperHomeScreen(imgUrl),
+            onPressed: () => setWallpaperHomeScreen(widget.imgUrl),
           ),
-          //Set Lockscreen
           SpeedDialChild(
             child: const Icon(
               Icons.lock,
               size: 18,
             ),
             label: 'Set Lockscreen',
-            onPressed: () => setWallpaperLockScreen(imgUrl),
+            onPressed: () => setWallpaperLockScreen(widget.imgUrl),
           ),
-          //Download
           SpeedDialChild(
             child: const Icon(
               Icons.cloud_download,
               size: 18,
             ),
             label: 'Download',
-            onPressed: () => downloadWallpaper(imgUrl),
+            onPressed: () => downloadWallpaper(widget.imgUrl),
           ),
-          //Share
           SpeedDialChild(
             child: const Icon(
               Icons.share,
               size: 18,
             ),
             label: 'Share',
-            onPressed: () => shareImage(imgUrl),
+            onPressed: () => shareImage(widget.imgUrl),
           ),
         ],
         child: const Icon(
           Icons.add_circle_outline_outlined,
         ),
       ),
-      body: Hero(
-        tag: imgUrl,
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(imgUrl),
-              fit: BoxFit.cover,
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(widget.imgUrl),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
+          Positioned(
+           top: 100.h,
+           right: 40.w,
+            child: IconButton(
+                onPressed: () {
+                  setState(() {
+                  //  String id = DateTime.now().microsecondsSinceEpoch.toString();
+                   firestore.doc().set({'img':widget.imgUrl,'name':widget.name}).then((value) {
+                    Fluttertoast.showToast(msg: 'Add Favorite');
+                   }).onError((error, stackTrace){
+                    Fluttertoast.showToast(msg: error.toString());
+                   });
+                  });
+                },
+                icon: Icon(
+                  Icons.favorite_outline,
+                  color: Colors.white,
+                  size: 40,
+                )),
+          ),
+        ],
       ),
     );
   }

@@ -47,6 +47,7 @@ dependencies:
   flutter_screenutil: any
   get: any
   carousel_slider: any
+  firebase_storage: any
   
 
 dev_dependencies:

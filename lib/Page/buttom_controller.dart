@@ -64,8 +64,8 @@ class _BottomNavControllerState extends State<BottomNavController> {
           padding: const EdgeInsets.all(5.0),
           child: FloatingActionButton(
             backgroundColor:
-                _currentIndex == 1 ? Colors.deepPurple : Colors.black,
-            child: Icon(Icons.home,color: Colors.white,),
+                _currentIndex == 1 ? Colors.white : Colors.black,
+            child: Icon(Icons.home,color:  _currentIndex == 1 ? Colors.black : Colors.white,),
             onPressed: () => setState(() {
               _currentIndex.value = 1;
             }),

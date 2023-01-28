@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text("Wellpaper",style: TextStyle(fontSize: 25.sp),),
@@ -24,10 +24,10 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(
-          left: 15,
-          right: 15,
-          // top: 20,
-          bottom: 10,
+          left: 10,
+          right: 10,
+          top: 5,
+          bottom: 5,
         ),
         child: StreamBuilder<QuerySnapshot>(
           stream: _imageStream,
