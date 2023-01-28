@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wallpaper_application/CategoryPage/image_category.dart';
 
+import '../const/app_colors.dart';
+
 class HomeScreen extends StatelessWidget {
   final Stream<QuerySnapshot> _imageStream =
       FirebaseFirestore.instance.collection('home').snapshots();
@@ -13,17 +15,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   title: Text("Wellpaper"),
-      //   centerTitle: true,
-      //   backgroundColor: AppColors.bg,
-      // ),
+      
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text("Wellpaper",style: TextStyle(fontSize: 25.sp),),
+        centerTitle: true,
+        // backgroundColor: AppColors.bg, 
+      ),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 15,
           right: 15,
-          top: 20,
+          // top: 20,
           bottom: 10,
         ),
         child: StreamBuilder<QuerySnapshot>(

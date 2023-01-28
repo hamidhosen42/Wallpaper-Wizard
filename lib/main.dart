@@ -36,6 +36,7 @@ class _MyAppState extends State<MyApp> {
           title: AppString.AppName,
           theme: ThemeData(
             primarySwatch: Colors.deepPurple,
+            appBarTheme: AppBarTheme(color: AppColors.bg),
             scaffoldBackgroundColor: AppColors.bg,
             floatingActionButtonTheme: FloatingActionButtonThemeData(
               backgroundColor: Colors.white,

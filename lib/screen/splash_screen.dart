@@ -29,12 +29,8 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    // ignore: todo
-    // TODO: implement initState
     super.initState();
-    Timer(
-        const Duration(seconds: 3),
-        () => Get.toNamed(bottomNavController));
+    Timer(const Duration(seconds: 3), () => Get.toNamed(bottomNavController));
   }
 
   @override
