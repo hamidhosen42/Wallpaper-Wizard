@@ -141,17 +141,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
             child: IconButton(
                 onPressed: () {
                   setState(() {
-                  //  String id = DateTime.now().microsecondsSinceEpoch.toString();
-                   firestore.doc().set({'img':widget.imgUrl,'name':widget.name}).then((value) {
-                    Fluttertoast.showToast(msg: 'Add Favorite');
+                   String id = DateTime.now().microsecondsSinceEpoch.toString();
+                   firestore.doc(id).set({'img':widget.imgUrl,'name':widget.name,'id':id}).then((value) {
+                    Fluttertoast.showToast(msg: 'Add ${widget.name} theme');
                    }).onError((error, stackTrace){
                     Fluttertoast.showToast(msg: error.toString());
                    });
                   });
                 },
                 icon: Icon(
-                  Icons.favorite_outline,
-                  color: Colors.white,
+                  Icons.favorite,
+                  color: Colors.red,
                   size: 40,
                 )),
           ),

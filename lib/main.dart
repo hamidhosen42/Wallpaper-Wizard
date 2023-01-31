@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData(
             primarySwatch: Colors.deepPurple,
             appBarTheme: AppBarTheme(color: AppColors.bg),
-            scaffoldBackgroundColor: AppColors.bg,
+            scaffoldBackgroundColor: Colors.black,
             floatingActionButtonTheme: FloatingActionButtonThemeData(
               backgroundColor: Colors.white,
               foregroundColor: Colors.black,

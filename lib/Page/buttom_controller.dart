@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_wallpaper_application/Page/favorite_screen.dart';
 import 'package:flutter_wallpaper_application/Page/nav_home.dart.dart';
 import 'package:get/state_manager.dart';
 
@@ -18,7 +19,7 @@ class _BottomNavControllerState extends State<BottomNavController> {
   final _pages = [
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    FavoriteScreen()
   ];
 
   @override

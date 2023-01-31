@@ -19,7 +19,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late final AnimationController _controller =
-      AnimationController(duration: Duration(seconds: 3), vsync: this)
+      AnimationController(duration: Duration(seconds: 100), vsync: this)
         ..repeat();
 
   void dispose() {
@@ -41,12 +41,11 @@ class _SplashScreenState extends State<SplashScreen>
           child: AnimatedBuilder(
               animation: _controller,
               child: Container(
-                width: 200.w,
-                height: 200.h,
+                width: 500.w,
+                height: 500.h,
                 child: Center(
                   child: Image.asset(
-                    'assets/icon/eye.png',
-                    width: 120,
+                    'assets/icon/1.png',
                   ),
                 ),
               ),
