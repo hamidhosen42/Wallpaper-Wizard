@@ -6,12 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wallpaper_application/DetailsPage/details_screen.dart';
 
-import '../const/app_colors.dart';
 
-class NatureScreen extends StatelessWidget {
+class CategoryScreen extends StatelessWidget {
   String name;
 
-  NatureScreen(this.name);
+  CategoryScreen(this.name);
 
   final _imageStream =
       FirebaseFirestore.instance.collection("image").snapshots();
@@ -19,12 +18,12 @@ class NatureScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(name,style: TextStyle(fontSize: 25.sp)),
-        centerTitle: true,
-        backgroundColor: AppColors.bg,
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   title: Text(name,style: TextStyle(fontSize: 25.sp)),
+      //   centerTitle: true,
+      //   backgroundColor: AppColors.bg,
+      // ),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 10,

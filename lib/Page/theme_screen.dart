@@ -5,30 +5,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wallpaper_application/CategoryPage/image_category.dart';
-import 'package:flutter_wallpaper_application/const/app_strings.dart';
-import 'package:flutter_wallpaper_application/route/route.dart';
-import 'package:get/get.dart';
+import 'package:flutter_wallpaper_application/DetailsPage/details_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class ThemeScreen extends StatelessWidget {
   final Stream<QuerySnapshot> _imageStream =
-      FirebaseFirestore.instance.collection('home').snapshots();
+      FirebaseFirestore.instance.collection('theme').snapshots();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppString.AppName,style: TextStyle(fontSize: 25.sp),),
-        // ignore: prefer_const_literals_to_create_immutables
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: IconButton(onPressed: (){
-              Get.toNamed(profileScreen);
-            }, icon: Icon(Icons.person,size: 25.sp,)),
-          )
-        ],
-        automaticallyImplyLeading: false,
-      ),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 10,
@@ -63,20 +48,12 @@ class HomeScreen extends StatelessWidget {
                 (DocumentSnapshot document) {
                   Map<String, dynamic> data =
                       document.data()! as Map<String, dynamic>;
-                  var name = data['name'];
                   return Hero(
                     tag: data,
                     child: Material(
                       borderRadius: BorderRadius.circular(10.h),
                       child: Stack(
                         children: [
-                          Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                name,
-                                style: TextStyle(
-                                    fontSize: 25.sp, color: Colors.white),
-                              )),
                           Ink(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.h),
@@ -92,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                               onTap: () => Navigator.push(
                                   context,
                                   CupertinoPageRoute(
-                                      builder: (_) => CategoryScreen(name))),
+                                      builder: (_) => DetailsScreen(data['img'], "Theme"))),
                             ),
                           ),
                         ],

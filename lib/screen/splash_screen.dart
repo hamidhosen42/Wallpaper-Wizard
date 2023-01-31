@@ -19,7 +19,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late final AnimationController _controller =
-      AnimationController(duration: Duration(seconds: 100), vsync: this)
+      AnimationController(duration: Duration(seconds: 1), vsync: this)
         ..repeat();
 
   void dispose() {
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () => Get.toNamed(bottomNavController));
+    Timer(const Duration(seconds: 5), () => Get.toNamed(bottomNavController));
   }
 
   @override
@@ -38,23 +38,15 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: AnimatedBuilder(
-              animation: _controller,
-              child: Container(
-                width: 500.w,
-                height: 500.h,
-                child: Center(
-                  child: Image.asset(
-                    'assets/icon/1.png',
-                  ),
-                ),
+          child: Container(
+            width: 500.w,
+            height: 500.h,
+            child: Center(
+              child: Image.asset(
+                'assets/icon/logo1.png',
               ),
-              builder: (BuildContext context, child) {
-                return Transform.rotate(
-                  angle: _controller.value * 2.0 * math.pi,
-                  child: child,
-                );
-              }),
+            ),
+          ),
         ),
       ),
     );

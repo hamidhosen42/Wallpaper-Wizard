@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_wallpaper_application/Page/favorite_screen.dart';
 import 'package:flutter_wallpaper_application/Page/nav_home.dart.dart';
+import 'package:flutter_wallpaper_application/Page/theme_screen.dart';
 import 'package:get/state_manager.dart';
 
 class BottomNavController extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BottomNavControllerState extends State<BottomNavController> {
   RxBool _drawer = false.obs;
 
   final _pages = [
-    HomeScreen(),
+    ThemeScreen(),
     HomeScreen(),
     FavoriteScreen()
   ];
@@ -48,7 +49,7 @@ class _BottomNavControllerState extends State<BottomNavController> {
                   onTap: (value) => _currentIndex.value = value,
                   items: [
                     BottomNavigationBarItem(
-                        icon: Icon(Icons.add_outlined), label: "Add"),
+                        icon: Icon(Icons.image), label: "Theme"),
                     BottomNavigationBarItem(
                         icon: Icon(Icons.home_outlined), label: ""),
                     BottomNavigationBarItem(

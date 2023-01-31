@@ -60,13 +60,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       borderRadius: BorderRadius.circular(10.h),
                       child: Stack(
                         children: [
-                          Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                name,
-                                style: TextStyle(
-                                    fontSize: 25.sp, color: Colors.white),
-                              )),
                           Container(
                               height: 200.h,
                               width: MediaQuery.of(context).size.width,
@@ -98,18 +91,17 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                                 Fluttertoast.showToast(
                                                     msg:
                                                         'Delete ${name} theme');
-                                                // Navigator.pop(context);
                                               }).onError((error, stackTrace) {
                                                 Fluttertoast.showToast(
                                                     msg: error.toString());
                                               });
                                             });
                                           },
-                                          icon: Icon(
-                                            Icons.delete_sharp,
-                                            color: Colors.red,
-                                            size: 30.sp
-                                          )),
+                                          icon: Icon(Icons.delete_sharp,
+                                              color: Colors.red, size: 30.sp)),
+                                    ),
+                                    SizedBox(
+                                      height: 10.h,
                                     ),
                                     Text(data['name'],
                                         style: TextStyle(

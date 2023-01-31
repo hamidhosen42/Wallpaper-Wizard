@@ -29,7 +29,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       int location = WallpaperManager.HOME_SCREEN;
       var file = await DefaultCacheManager().getSingleFile(url);
       await WallpaperManager.setWallpaperFromFile(file.path, location);
-      Fluttertoast.showToast(msg: 'set successfully');
+      Fluttertoast.showToast(msg: 'Set successfully');
     } catch (e) {
       Fluttertoast.showToast(msg: 'Failed');
     }
@@ -40,7 +40,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       int location = WallpaperManager.LOCK_SCREEN;
       var file = await DefaultCacheManager().getSingleFile(url);
       await WallpaperManager.setWallpaperFromFile(file.path, location);
-      Fluttertoast.showToast(msg: 'set successfully');
+      Fluttertoast.showToast(msg: 'Set successfully');
     } catch (e) {
       Fluttertoast.showToast(msg: 'Failed');
     }
