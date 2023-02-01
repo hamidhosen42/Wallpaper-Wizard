@@ -29,11 +29,7 @@ flutter run
 - font_awesome_flutter: any
 
 ## Screenshots
-<img src="./assets/splash_screen.png" width=200> 
-<img src="./assets/home_screen.png" width=200> 
-<img src="./assets/favorite_screen.png" width=200> 
-<img src="./assets/theme.png" width=200>
-<img src="./assets/categori_screen.png" width=200> 
-<img src="./assets/details_screen.png" width=200> 
+<img src="./assets/splash_screen.png" width=200> <img src="./assets/home_screen.png" width=200> <img src="./assets/favorite_screen.png" width=200> 
+<img src="./assets/theme.png" width=200><img src="./assets/categori_screen.png" width=200> <img src="./assets/details_screen.png" width=200> 
 <img src="./assets/set_welpaper.png" width=200> 
 <img src="./assets/figma.png"> 
