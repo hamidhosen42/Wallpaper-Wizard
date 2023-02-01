@@ -1,17 +1,34 @@
-# flutter_wallpaper_application
+### flutter_wallpaper_application
 
-A new Flutter project.
+<p align="center"> 
+  <tr>
+     <td><img src="/assets/icon/logo1.png" width=100 ></td>
+  </tr>
+  <h2 align="center">This is Wallpaper App<h2>
+ </p>
+ 
+## Development Setup
+Clone the repository and run the following commands:
+```
+flutter pub get
+flutter run
+```
+ 
+### flutter packages:
+- cupertino_icons: ^1.0.2
+- firebase_core: any
+- cloud_firestore: any
+- fluttertoast: any
+- simple_speed_dial: any
+- flutter_wallpaper_manager: any
+- flutter_cache_manager: any
+- image_downloader: any
+- share_plus: any
+- flutter_screenutil: any
+- get: any
+- carousel_slider: any
+- firebase_storage: any
+- font_awesome_flutter: any
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Flutter-Wallpaper-Application" 
+## Screenshots
+<img src="./assets/app_image/img-1.png" width=200> <img src="./assets/app_image/img-2.png" width=200> <img src="./assets/app_image/img-3.png" width=200> <img src="./assets/app_image/img-4.png" width=200> <img src="./assets/app_image/img-5.png" width=200> <img src="./assets/app_image/img-6.png" width=200> <img src="./assets/app_image/img-7.png" width=200> <img src="./assets/app_image/img-8.png" width=200> <img src="./assets/app_image/img-9.png" width=200> <img src="./assets/app_image/img-10.png" width=200> <img src="./assets/app_image/img-11.png" width=200> 
