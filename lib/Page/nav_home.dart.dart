@@ -17,14 +17,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppString.AppName,style: TextStyle(fontSize: 25.sp),),
+        title: Text(
+          AppString.AppName,
+          style: TextStyle(fontSize: 25.sp),
+        ),
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: IconButton(onPressed: (){
-              Get.toNamed(profileScreen);
-            }, icon: Icon(Icons.person,size: 25.sp,)),
+            child: IconButton(
+                onPressed: () {
+                  Get.toNamed(profileScreen);
+                },
+                icon: Icon(
+                  Icons.person,
+                  size: 25.sp,
+                )),
           )
         ],
         automaticallyImplyLeading: false,
