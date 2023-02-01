@@ -54,65 +54,54 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   var name = data['name'];
                   var id = data['id'];
 
-                  return Hero(
-                    tag: data,
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10.h),
-                      child: Stack(
-                        children: [
-                          Container(
-                              height: 200.h,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.h),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    data['img'],
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
+                  return Material(
+                    borderRadius: BorderRadius.circular(10.h),
+                    child: Container(
+                        height: 200.h,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.h),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              data['img'],
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      FirebaseFirestore.instance
+                                          .collection('favorite')
+                                          .doc(id)
+                                          .delete()
+                                          .then((value) {
+                                        Fluttertoast.showToast(
+                                            msg:
+                                                'Delete ${name} theme');
+                                      }).onError((error, stackTrace) {
+                                        Fluttertoast.showToast(
+                                            msg: error.toString());
+                                      });
+                                    });
+                                  },
+                                  icon: Icon(Icons.delete_sharp,
+                                      color: Colors.red, size: 30.sp)),
+                              SizedBox(
+                                height: 10.h,
                               ),
-                              child: Center(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Positioned(
-                                      top: 100.h,
-                                      right: 40.w,
-                                      child: IconButton(
-                                          onPressed: () {
-                                            setState(() {
-                                              FirebaseFirestore.instance
-                                                  .collection('favorite')
-                                                  .doc(id)
-                                                  .delete()
-                                                  .then((value) {
-                                                Fluttertoast.showToast(
-                                                    msg:
-                                                        'Delete ${name} theme');
-                                              }).onError((error, stackTrace) {
-                                                Fluttertoast.showToast(
-                                                    msg: error.toString());
-                                              });
-                                            });
-                                          },
-                                          icon: Icon(Icons.delete_sharp,
-                                              color: Colors.red, size: 30.sp)),
-                                    ),
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Text(data['name'],
-                                        style: TextStyle(
-                                            fontSize: 25.sp,
-                                            color: Colors.white)),
-                                  ],
-                                ),
-                              )),
-                        ],
-                      ),
-                    ),
+                              Text(data['name'],
+                                  style: TextStyle(
+                                      fontSize: 25.sp,
+                                      color: Colors.white)),
+                            ],
+                          ),
+                        )),
                   );
                 },
               ).toList(),
