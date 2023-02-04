@@ -12,6 +12,7 @@ flutter pub get
 flutter run
 ```
 ### Firebase : https://console.firebase.google.com/u/4/project/flutter-wallpaper-applic-dacff/firestore/data/~2Ffavorite~2F1675179739120087
+### [APK](https://github.com/hamidhosen42/Flutter-Wallpaper-Wizard-Application/blob/main/Wallpaper%20Wizard.apk)
 ### flutter packages:
 - cupertino_icons: ^1.0.2
 - firebase_core: any
